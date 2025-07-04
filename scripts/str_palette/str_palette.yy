@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"str_palette",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"str_palette",
+  "parent":{
+    "name":"MRDX2_TIMBuilder",
+    "path":"MRDX2_TIMBuilder.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

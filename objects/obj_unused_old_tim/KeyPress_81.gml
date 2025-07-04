@@ -1,0 +1,1 @@
+instance_create_depth(OOB, OOB, 0, obj_image_creator);

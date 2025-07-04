@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrpack_ds_list_scripts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrpack_ds_list_scripts",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Helpers/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

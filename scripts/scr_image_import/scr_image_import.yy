@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_image_import",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_image_import",
+  "parent":{
+    "name":"MRDX2_TIMBuilder",
+    "path":"MRDX2_TIMBuilder.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

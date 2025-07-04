@@ -1,0 +1,1 @@
+scr_image_import(string_delete(m_filename, -1, -3) + "png", m_tim_list);    
