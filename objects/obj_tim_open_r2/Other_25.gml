@@ -67,7 +67,7 @@ f_convert_to_tim = function(_tim_list, _filename) {
             }
         }
         
-        else if ( m_tim.header.bppclp == 9 ) { //8Bit
+        else if ( tim.header.bppclp == 9 ) { //8Bit
             for ( var j = 0; j < array_length(tim.image.data); j++ ) {
                 buffer_write(buffer, buffer_u8, tim.image.data[j]);
             } 
