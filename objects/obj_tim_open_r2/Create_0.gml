@@ -18,6 +18,9 @@ m_current_tim = -1;
 m_color_weights = { h : 48, s : 28, v : 24 };
 m_color_minimum_uses = 0;
 
+m_ignore_merge_battle_file = false;
+m_ignore_merge_image_data = [];
+
 m_tim = {
     id : 0,
     
@@ -48,5 +51,6 @@ m_tim = {
     
     palette : -1
 }
+
 
 ms_image_scale = 6;

@@ -11,6 +11,7 @@ if ( m_filename != "" ) {
     m_timbuffer = buffer_load(m_filename);
     buffer_seek(m_timbuffer, buffer_seek_start, 0);
     
+    m_ignore_merge_battle_file = ( string_count("bt", m_filename) > 0 );
  }
 
 m_current_tim = -1;
@@ -106,4 +107,11 @@ while ( buffer_tell(m_timbuffer) + 16 < buffer_get_size(m_timbuffer) && m_filena
     }
     
     array_push(m_tim_list, m_tim);
+    
+    if ( m_ignore_merge_battle_file && array_length(m_tim_list) == 2 ) {
+        m_ignore_merge_image_data = [];
+        for ( var j = 0; j < array_length(m_tim.image.data); j++ ) {
+            array_push(m_ignore_merge_image_data, m_tim.image.data[j]);
+        }
+    }
 }
