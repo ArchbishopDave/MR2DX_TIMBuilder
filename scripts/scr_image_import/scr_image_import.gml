@@ -13,13 +13,21 @@ function scr_image_import(_filename, _timlist) {
     }
     
     var surface = new str_surface();
-    surface.f_check_and_set(m_icols * m_msx, m_icols * m_msy);
+    
+    var surf_width = m_icols * m_msx;
+    var surf_height = m_icols * m_msy;
+    surface.f_check_and_set(surf_width, surf_height);
+    
     draw_sprite(sprite, 0, 0, 0);
     surface_reset_target();
+    
+    var pixelbuffer = buffer_create(surf_width * surf_height * 4, buffer_fixed, 1);
+    buffer_get_surface(pixelbuffer, surface.surface, 0);
     
     for ( var i = 0; i < array_length(_timlist); i++ ) {
         var tim = _timlist[i];
         
+        var clut_color_count = 0;
         tim.clut.colors = [];
         tim.image.data = [];
         
@@ -28,7 +36,12 @@ function scr_image_import(_filename, _timlist) {
         
         for ( var k = 0; k < tim.image.ih; k++ ) {
             for ( var j = 0; j < ( tim.image.iw * tim.image.wmult ); j++ ) {
-                var pixeldata = surface_getpixel_ext(surface.surface, sx + j, sy + k);
+                //var pixeldata = surface_getpixel_ext(surface.surface, sx + j, sy + k);
+                var pixelx = (sx + j);
+                var pixely = (sy + k);
+                var offset = (pixely * surf_width + pixelx) * 4;
+                var pixeldata = buffer_peek(pixelbuffer, offset, buffer_u32);
+                
                 var a = (pixeldata >> 24) & 255;
                 var b = (pixeldata >> 16) & 255;
                 var g = (pixeldata >> 8) & 255;
@@ -42,7 +55,7 @@ function scr_image_import(_filename, _timlist) {
                 var gmc = new str_color_rgba(r, g, b, a);
                 
                 var foundcolor = false;
-                for ( var z = 0; z < array_length(tim.clut.colors); z++ ) {
+                for ( var z = 0; z < clut_color_count; z++ ) {
                     var color = tim.clut.colors[z];
                     
                     if ( color.gmcolor == gmc.gmcolor && color.stp == gmc.stp ) {
@@ -54,8 +67,9 @@ function scr_image_import(_filename, _timlist) {
                 }
                 
                 if ( !foundcolor ) {
-                    array_push(tim.image.data, array_length(tim.clut.colors) );
+                    array_push(tim.image.data, clut_color_count );
                     array_push(tim.clut.colors, gmc);
+                    clut_color_count++;
                 }
             }
         }
