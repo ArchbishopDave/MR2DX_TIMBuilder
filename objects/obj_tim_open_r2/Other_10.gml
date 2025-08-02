@@ -109,6 +109,11 @@ while ( buffer_tell(m_timbuffer) + 16 < buffer_get_size(m_timbuffer) && m_filena
     array_push(m_tim_list, m_tim);
     
     if ( m_ignore_merge_battle_file && array_length(m_tim_list) == 2 ) {
+        m_ignore_merge_clut_colors = [];
+        for ( var j = 0; j < array_length(m_tim.clut.colors); j++ ) {
+            array_push(m_ignore_merge_clut_colors, m_tim.clut.colors[j]);
+        }
+        
         m_ignore_merge_image_data = [];
         for ( var j = 0; j < array_length(m_tim.image.data); j++ ) {
             array_push(m_ignore_merge_image_data, m_tim.image.data[j]);

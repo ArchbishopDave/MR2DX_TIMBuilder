@@ -40,15 +40,29 @@ for ( var i = 0; i < array_length(m_tim_list); i++ ) {
    }
         
     
-    var current = 0;
+
     
-    for ( var j = 0; j < min(ctim.clut.cw * ctim.clut.ch, array_length(palette.palette_slots)); j++ ) {
-        array_push(ctim.clut.colors, new str_color_copy(palette.palette_slots[j].color));
-        current++;
+    if ( !m_ignore_merge_battle_file || i != 1 ) { // Regular Instance of Replacing the Colors
+        var current = 0;    
+        
+        for ( var j = 0; j < min(ctim.clut.cw * ctim.clut.ch, array_length(palette.palette_slots)); j++ ) {
+            array_push(ctim.clut.colors, new str_color_copy(palette.palette_slots[j].color));
+            current++;
+        }
+        
+        for ( var k = current; k < (ctim.clut.cw * ctim.clut.ch); k++ ) {
+            array_push(ctim.clut.colors, new str_color_copy(palette.palette_slots[0].color));
+        } 
     }
+
     
-    for ( var k = current; k < (ctim.clut.cw * ctim.clut.ch); k++ ) {
-        array_push(ctim.clut.colors, new str_color_copy(palette.palette_slots[0].color));
+
+        
+    else { // If it's the technique image, ignore color changes and use the color data we saved earlier. 
+        for ( var j = 0; j < min(ctim.clut.cw * ctim.clut.ch, array_length(m_ignore_merge_clut_colors)); j++ ) {
+            array_push(ctim.clut.colors, m_ignore_merge_clut_colors[j]);
+            current++;
+        } 
     }
     
     ctim.palette = palette;
