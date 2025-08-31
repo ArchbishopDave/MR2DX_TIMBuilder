@@ -67,7 +67,7 @@ Breed identifiers are the first two letters of the folder names above.
 Tool Usage
 ---
 
-1. Go to https://github.com/ArchbishopDave/MRDX2\_TIMBuilder/releases/ and download the latest .zip file
+1. Go to https://github.com/ArchbishopDave/MRDX2_TIMBuilder/releases/ and download the latest .zip file
 2. Extract the contents of the zip file into a folder
 3. Open MR2DX\_TIMBuilder.exe
 4. Click on Import TIM and select the texture file you wish to use as a base.
