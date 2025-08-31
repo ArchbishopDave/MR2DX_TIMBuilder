@@ -19,15 +19,17 @@ m_import_png.m_text = "Import PNG";
 m_export_tim = instance_create_depth(256+128, 0, 0, obj_button);
 m_export_tim.m_text = "Export TIM";
 
-m_confirm = instance_create_depth(256, 256, -1, obj_button);
-m_confirm.m_text = "CONFIRM";
-m_confirm.m_visible = false;
+m_button_cmode = instance_create_depth(512, 0, 0, obj_button);
+m_button_cmode.m_text = "Creator Mode";
+m_button_cmode.m_available = true;
 
-m_cancel = instance_create_depth(256+16+128, 256, -1, obj_button);
-m_cancel.m_text = "CANCEL";
-m_cancel.m_visible = false;
-
-m_current_message = "Click Import TIM to load an MRDX2.tex or .tim file.";
+md_message_current = "Click Import TIM to load an MR2DX.tex or .tim file.\nClick Creator Mode to use the expedited TIM creation process.";
+md_message_processing = "";
+md_message_version = "";
 
 m_warning_export_png_overwrite = false;
+
+
+
+m_http_request = http_get("https://api.github.com/repos/ArchbishopDave/MR2DX_TIMBuilder/releases/latest");
 

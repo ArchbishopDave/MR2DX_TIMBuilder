@@ -16,7 +16,7 @@ if ( m_filename != "" ) {
 
 m_current_tim = -1;
 var bufferpos = 0;
-while ( buffer_tell(m_timbuffer) + 16 < buffer_get_size(m_timbuffer) && m_filename != "" ) {
+while ( m_filename != "" && buffer_tell(m_timbuffer) + 16 < buffer_get_size(m_timbuffer) ) {
     m_current_tim++;
     
     m_tim = {

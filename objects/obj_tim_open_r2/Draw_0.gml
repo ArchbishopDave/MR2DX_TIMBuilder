@@ -6,7 +6,7 @@ draw_set_font(f_font);
 
 if ( m_current_tim != -1 ) {
     m_tim = m_tim_list[m_current_tim];
-    var v = 4;
+    var v = 5;
     draw_set_color(c_white);
     draw_text(4, v*16, m_filename); v++;
     draw_text(4, v*16, "TIM " + string (m_current_tim+1) + "/" + string(array_length(m_tim_list))); v++;

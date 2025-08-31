@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"spr_button_highlight",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"04f22d14-078d-4cde-be4c-3f4b2e8bc16a","name":"04f22d14-078d-4cde-be4c-3f4b2e8bc16a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"04f22d14-078d-4cde-be4c-3f4b2e8bc16a","name":"04f22d14-078d-4cde-be4c-3f4b2e8bc16a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -42,7 +42,7 @@
     ],
     "top":3,
   },
-  "origin":9,
+  "origin":0,
   "parent":{
     "name":"MRDX2_TIMBuilder",
     "path":"MRDX2_TIMBuilder.yyp",
@@ -96,8 +96,8 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":4,
-    "yorigin":2,
+    "xorigin":0,
+    "yorigin":0,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

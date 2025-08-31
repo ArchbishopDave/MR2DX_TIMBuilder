@@ -1,7 +1,7 @@
-if ( m_visible && m_available && m_pressed ) { 
+if ( !obj_menu_master.m_menu_locked && m_visible && m_available && m_pressed ) { 
     m_pressedtwo = true; 
 }
 
-if ( m_visible && m_available ) { 
+if ( !obj_menu_master.m_menu_locked && m_visible && m_available ) { 
     m_pressed = true; 
 }

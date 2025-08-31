@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sou_reject",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":1,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.27210885,
+  "exportDir":"",
+  "name":"sou_reject",
+  "parent":{
+    "name":"MRDX2_TIMBuilder",
+    "path":"MRDX2_TIMBuilder.yyp",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sou_reject.ogg",
+  "volume":0.54,
+}
